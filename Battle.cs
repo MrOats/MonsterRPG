@@ -18,23 +18,16 @@ namespace Test
 		public void battle() {
 			Random chooser=new Random();
 			int chosenmonster=chooser.Next(5);
-			double 
-defeated=(chooser.NextDouble()*(monsters[chosenmonster].returnHealth())+1);
-			Console.WriteLine("The monster you are 
-fighting is "+monsters[chosenmonster].returnName()+" and has 
-"+monsters[chosenmonster].returnHealth()+" HP.");
+			double defeated=(chooser.NextDouble()*(monsters[chosenmonster].returnHealth())+1);
+			Console.WriteLine("The monster you are fighting is "+monsters[chosenmonster].returnName()+" and has "+monsters[chosenmonster].returnHealth()+" HP.");
 			if (defeated>=3){
-				Console.WriteLine("You beat 
-"+monsters[chosenmonster].returnName()+"!");
+				Console.WriteLine("You beat "+monsters[chosenmonster].returnName()+"!");
 				wonloss=true;
 			}
 			else if(defeated<3){
-				Console.WriteLine("You lost to 
-"+monsters[chosenmonster].returnName()+"!");
+				Console.WriteLine("You lost to "+monsters[chosenmonster].returnName()+"!");
 				wonloss=false;
-			}    
+			}
 		}
 	}
 }
-
-

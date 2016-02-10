@@ -10,7 +10,7 @@ namespace Test
 			new Monster("Elf", 8),
 			new Monster("Ant", 3),
 			new Monster("Worm", 2),
-			new Monster("Black Widow",6)}; 
+			new Monster("Black Widow",6)};
 
 			Battle battle = new Battle(monsterid);
 			while (battle.isWonloss()) {
@@ -20,4 +20,3 @@ namespace Test
 	}
 }
 }
-

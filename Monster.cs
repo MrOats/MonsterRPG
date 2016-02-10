@@ -8,7 +8,7 @@ namespace Test
 		public String n;
 		public Monster(String name,int health){
 			n=name;
-			hp=health;        
+			hp=health;
 		}
 		public int returnHealth(){
 			return hp;
@@ -18,5 +18,3 @@ namespace Test
 		}
 	}
 }
-
-
