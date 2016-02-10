@@ -20,11 +20,11 @@ namespace Test
 			int chosenmonster=chooser.Next(5);
 			double defeated=(chooser.NextDouble()*(monsters[chosenmonster].returnHealth())+1);
 			Console.WriteLine("The monster you are fighting is "+monsters[chosenmonster].returnName()+" and has "+monsters[chosenmonster].returnHealth()+" HP.");
-			if (defeated>=3){
+			if (defeated>=(monsters[chosenmonster].returnHealth()/2)){
 				Console.WriteLine("You beat "+monsters[chosenmonster].returnName()+"!");
 				wonloss=true;
 			}
-			else if(defeated<3){
+			else if(defeated<(monsters[chosenmonster].returnHealth()/2)){
 				Console.WriteLine("You lost to "+monsters[chosenmonster].returnName()+"!");
 				wonloss=false;
 			}
