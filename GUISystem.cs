@@ -20,9 +20,11 @@ public class GUISystem: Form
 		start_program.Click+=new EventHandler(Exec_Monster.beginfight);
 
 		displaybar.Size=new Size(200,30);
+		displaybar.Font=new Font("Verdana",10F,System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 
 		wonloss_status.Location=new Point(300,0);
 		wonloss_status.Size=new Size(200,30);
+		wonloss_status.Font=new Font("Verdana",10F,System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 		Controls.Add(start_program);
 		Controls.Add(displaybar);
 		Controls.Add(wonloss_status);
