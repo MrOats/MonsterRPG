@@ -1,30 +1,37 @@
 using System;
-using Gtk;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace MonsterRPG{
-public class GUISystem: Window
+public class GUISystem: Form
 {
-	public static Button start_program=new Button("Begin Fighting!");
+	public static Button start_program=new Button();
 	public static Label displaybar=new Label();
-	public GUISystem () : base ("MonsterRPG")
+	public static Label wonloss_status=new Label();
+	public GUISystem ()
 	{
+		Text="MonsterRPG";
+		Size = new Size(800,600);
+		CenterToScreen();
 
-		SetDefaultSize(800,600);
-		SetPosition(WindowPosition.Center);
-		DeleteEvent += new DeleteEventHandler(OnDeleteEvent);
-		VBox vbox=new VBox();
-		Add(vbox);
-		vbox.Add(displaybar);
-		vbox.Add(start_program);
+		start_program.Location=new Point(0,40);
+		start_program.Text="Start Fighting!";
+		start_program.Size=new Size(80,35);
+		start_program.Click+=new EventHandler(Exec_Monster.beginfight);
 
-		start_program.Clicked+=new EventHandler(Exec_Monster.beginfight);
-		ShowAll();
+		displaybar.Size=new Size(200,30);
+
+		wonloss_status.Location=new Point(300,0);
+		wonloss_status.Size=new Size(200,30);
+		Controls.Add(start_program);
+		Controls.Add(displaybar);
+		Controls.Add(wonloss_status);
 	}
-	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
+	/*protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 	{
 		Application.Quit ();
 		a.RetVal = true;
 	}
-
+*/
 }
 }

@@ -1,5 +1,4 @@
 using System;
-using Gtk;
 namespace MonsterRPG
 {
 	public class Battle
@@ -20,21 +19,18 @@ namespace MonsterRPG
 			int chosenmonster=chooser.Next(5);
 			double defeated=(chooser.NextDouble()*(monsters[chosenmonster].returnHealth())+1);
 			Console.WriteLine("The monster you are fighting is "+monsters[chosenmonster].returnName()+" and has "+monsters[chosenmonster].returnHealth()+" HP.");
-			Gtk.Application.Invoke(delegate{
 			GUISystem.displaybar.Text="The monster you are fighting is "+monsters[chosenmonster].returnName()+" and has "+monsters[chosenmonster].returnHealth()+" HP.";
-			});
+			GUISystem.displaybar.Refresh();
 			if (defeated>=(monsters[chosenmonster].returnHealth()/2)){
 				Console.WriteLine("You beat "+monsters[chosenmonster].returnName()+"!");
-				Gtk.Application.Invoke(delegate{
-				GUISystem.displaybar.Text=("You beat "+(monsters[chosenmonster].returnName())+"!");
-			});
+				GUISystem.wonloss_status.Text=("You beat "+(monsters[chosenmonster].returnName())+"!");
+				GUISystem.wonloss_status.Refresh();
 				wonloss=true;
 			}
 			else if(defeated<(monsters[chosenmonster].returnHealth()/2)){
 				Console.WriteLine("You lost to "+monsters[chosenmonster].returnName()+"!");
-				Gtk.Application.Invoke(delegate{
-				GUISystem.displaybar.Text="You lost to "+monsters[chosenmonster].returnName()+"!";
-			});
+				GUISystem.wonloss_status.Text="You lost to "+monsters[chosenmonster].returnName()+"!";
+				GUISystem.wonloss_status.Refresh();
 				wonloss=false;
 			}
 	}

@@ -1,5 +1,6 @@
 using System;
-using Gtk;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace MonsterRPG
 {
@@ -15,9 +16,7 @@ namespace MonsterRPG
 		public static void Main(string[] args){
 
 			//Make GUI
-			Application.Init();
-			GUISystem mainWindow=new GUISystem();
-			Application.Run();
+			Application.Run(new GUISystem());
 	}
 		public static void beginfight(object obj, EventArgs e){
 		Battle battle = new Battle(monsterid);
