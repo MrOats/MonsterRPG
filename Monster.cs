@@ -16,5 +16,8 @@ namespace MonsterRPG
 		public String returnName(){
 			return n;
 		}
+		public int returnDifficulty(){
+			return 2;
+		}
 	}
 }
