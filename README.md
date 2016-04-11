@@ -4,3 +4,9 @@ I decided to expand on it by adding an array of "Monsters" to "fight"
 
 ### Requires Mono or .NET Framework v4.0 (or above) to run.
 You can install Mono [here](http://www.mono-project.com/download/).
+
+##To Compile:
+Run this in the console
+```
+mcs -pkg:dotnet *.cs
+```
